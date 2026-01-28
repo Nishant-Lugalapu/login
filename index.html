@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        font-family: cursive;
+        background-color: bisque;
+      }
+      .error {
+        color: red;
+        font-size: 15px;
+      }
+      h2 {
+        text-align: center;
+        color: maroon;
+      }
+      form {
+        width: 350px;
+        margin: 40px auto;
+        background-color: #fff3e0;
+        padding: 20px;
+        border: 5px solid #d4a373;
+      }
+      #submit {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Login</h2>
+    <form onsubmit="return login();">
+      Email:
+      <input type="text" id="email" />
+      <span id="emailerror" class="error"></span><br /><br />
+      Password:
+      <input type="password" id="password" />
+      <span id="passworderror" class="error"></span><br /><br />
+      <input type="submit" value="Login" id="submit" />
+    </form>
+    <script>
+      function login() {
+        document.getElementById("emailerror").innerHTML = "";
+        document.getElementById("password").value;
+        let epattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+        if (!epattern.test(email)) {
+          document.getElementById("emailError").innerHTML =
+            "enter a valid email adress";
+          valid = false;
+        }
+        if (password === "") {
+          document.getElementById("passworderror").innerHTML =
+            "Password canntot be empty";
+          valid = false;
+        }
+        return valid;
+      }
+    </script>
+  </body>
+</html>
